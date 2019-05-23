@@ -24,3 +24,10 @@ As part of this process however, you should look to refactor some of the code in
 Once you have completed your work, send us a link to your public repository.
 
 Good luck!
+
+
+## Devloper Note:
+
+* I could implement the test framework more in depth, this is just to demostrate and test if the TransferMoney ans WithdrawalMoney is behaving expected.
+* The TransferMoney.Execute fuction should be in a transaction. 
+* I could use Microsoft dependency extension to implement dependency injection
