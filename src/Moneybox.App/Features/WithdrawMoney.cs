@@ -17,7 +17,16 @@ namespace Moneybox.App.Features
 
         public void Execute(Guid fromAccountId, decimal amount)
         {
-            // TODO:
+            var from = this.accountRepository.GetAccountById(fromAccountId);
+
+            if (from.CheckLowFund())
+            {
+                this.notificationService.NotifyFundsLow(from.User.Email);
+            }
+
+            from.Withdrawal(amount);
+
+            this.accountRepository.Update(from);
         }
     }
 }
